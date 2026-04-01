@@ -1,0 +1,49 @@
+content_task:
+  description: >
+    Given a topic: "{topic}", create detailed and well-structured content.
+
+    If feedback is provided: "{feedback}", refine the content accordingly by
+    addressing the feedback points.
+
+    If no feedback is provided, generate the content normally.
+
+    The content should include:
+    - Clear explanation of the topic
+    - Key insights
+    - Real-world examples
+    - Actionable takeaways
+
+    Keep the content informative, structured, and easy to understand.
+  expected_output: >
+    A detailed, structured content piece with explanations, insights,
+    examples, and actionable points, improved based on feedback if available.
+  agent: content_agent
+
+
+seo_task:
+  description: >
+    Analyze the provided content and perform SEO optimization.
+    Your tasks:
+    1. Extract primary and secondary keywords.
+    2. Suggest improvements to increase discoverability.
+    3. Refine the content by naturally integrating keywords.
+    Do not make the content sound robotic or keyword-stuffed.
+  expected_output: >
+    1. List of primary and secondary keywords.
+    2. Optimized version of the content with natural keyword integration.
+  agent: seo_agent
+
+
+post_task:
+  description: >
+    Using the optimized content, generate a LinkedIn post.
+    Follow these rules:
+    - Start with a strong hook (first line must grab attention)
+    - Use short paragraphs for readability
+    - Maintain a professional but engaging tone
+    - Add a clear takeaway or call-to-action at the end
+    - Optionally include relevant hashtags
+  expected_output: >
+    A polished LinkedIn post with a strong hook, engaging structure,
+    and clear call-to-action, ready to publish.
+  agent: post_agent
