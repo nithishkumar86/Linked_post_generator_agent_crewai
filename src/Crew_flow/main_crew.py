@@ -65,12 +65,11 @@ class LinkedInPostGenerator(Flow[PostState]):
 
     @listen("needs_revision")
     def on_needs_revision(self, result):
-        print(result)
         self.state.feedback = result.feedback
         if self.state.iteration >= MAX_ITERATIONS:
-            return "max_retry_exceeded"
+            print(f"max iternation reached : {self.state.iteration}")
+            self.state.approved = True
         return "retry"
-
 
 
 
